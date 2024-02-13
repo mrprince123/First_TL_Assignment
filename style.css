@@ -11,8 +11,6 @@ gray -  #7d8597 */
     padding: 0;
 }
 
-
-
 .navbar-nav li {
     font-size: 20px;
 }
@@ -70,7 +68,7 @@ gray -  #7d8597 */
     width: 100%;
 }
 
-.hr_hero{
+.hr_hero {
     width: 20%;
     margin: auto;
     border-top: 4px dashed #70e000;
@@ -117,9 +115,20 @@ gray -  #7d8597 */
     border-radius: 10px;
 }
 
-.one_category p {
-    color: #7d8597;
+.category_title {
+    color: #70e000;
+    font-size: large;
     margin-top: 5px;
+}
+
+.category_price {
+    color: black;
+    font-weight: 600;
+}
+
+.category_description {
+    color: #7d8597;
+    margin-top: 0px;
 }
 
 .one_category button {
@@ -131,7 +140,6 @@ gray -  #7d8597 */
     border-radius: 10px;
     border: 2px solid #70e000;
 }
-
 
 .contact_section {
     width: 50%;
@@ -172,7 +180,15 @@ gray -  #7d8597 */
     border-radius: 15px;
 }
 
-footer{
+.return_contact_message {
+    background-color: #edf2f4;
+    padding: 10px;
+    border-radius: 10px;
+    color: #70e000;
+}
+
+footer {
+    width: 100%;
     margin-top: 100px;
 }
 
@@ -184,15 +200,15 @@ footer{
     justify-content: space-around;
 }
 
-.footer_top h1{
+.footer_top h1 {
     color: #70e000;
 }
 
-.footer_top p{
+.footer_top p {
     color: #7d8597;
 }
 
-.footer_dev{
+.footer_dev {
     width: 20%;
 }
 
@@ -207,7 +223,7 @@ footer{
     font-weight: 500;
 }
 
-.footer_address{
+.footer_address {
     width: 15%;
 }
 
@@ -224,26 +240,26 @@ footer{
 
 
 /* About Page  */
-.about_center{
+.about_center {
     background-color: #edf2f4;
     padding: 40px;
     text-align: center;
     margin-top: 100px;
 }
 
-.about_center div{
+.about_center div {
     margin: auto;
     width: 30%;
 }
 
-.about_center h1{
+.about_center h1 {
     color: #70e000;
 }
 
-.about_center p{
+.about_center p {
     color: #7d8597;
 }
 
-.about_center div img{
+.about_center div img {
     width: 30%;
 }

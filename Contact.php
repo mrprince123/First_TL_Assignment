@@ -1,10 +1,55 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "toystore";
+
+  $conn = mysqli_connect($servername, $username, $password, $database);
+
+  if (!$conn) {
+    echo "Connection Error " . mysqli_connect_error();
+  } else {
+    // echo "Connection Successfull";
+  }
+
+  //  For Setting Data
+  $name = $_REQUEST['name'];
+  $email = $_REQUEST['email'];
+  $phone = $_REQUEST['phone'];
+  $purpose = $_REQUEST['purpose'];
+  $message = $_REQUEST['message'];
+
+  $sql = "INSERT INTO contact (name, email, phone, purpose, message) VALUES('$name', '$email', '$phone', '$purpose', '$message')";
+
+  $result = mysqli_query($conn, $sql);
+
+  // Fetching the Response from the Contact
+
+  if ($result) {
+    echo "<p>Contact Data Send Successfully You will get back to you soon!!</p>";
+  } else {
+    echo "<p>Data Inserting Failed" . mysqli_error($conn) . "</p>";
+  }
+
+  $conn->close();
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,7 +64,7 @@
       style="background-color: #edf2f4; color: #70e000"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" style="font-size: 30px; color: #70e000" href="/"
+        <a class="navbar-brand" style="font-size: 30px; color: #70e000" href="main.php"
           >Toy Store</a
         >
         <button
@@ -36,16 +81,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="main.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Pages/About.html">About</a>
+              <a class="nav-link" href="About.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">Contact</a>
+              <a class="nav-link" href="Contact.php">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Pages/Toys.html">Toys</a>
+              <a class="nav-link" href="Toys.php">Toys</a>
             </li>
           </ul>
         </div>
